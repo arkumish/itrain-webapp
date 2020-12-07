@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <title>iTrain</title>
+   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+      name='viewport' />
+   <script src="assets/js/core/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+   
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
+
+<style>
+ img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+  height: auto;
+}
+</style>
+
+</head>
+
+<body class="">
+   <div class="wrapper ">
+      <div class="sidebar" data-color="purple" data-background-color="white">
+         <div class="logo text-center">
+            <a href="#">
+               <h3>iTrain Dashboard</h3>
+            </a>
+         </div>
+         <div class="sidebar-wrapper">
+            <ul class="nav">
+               <li class="nav-item active  ">
+                  <a class="nav-link" href="./index.html">
+                     <i class="material-icons">content_paste</i>
+                     <p>Home</p>
+                  </a>
+               </li>
+              
+               <li class="nav-item ">
+                  <a class="nav-link" href="./slide-lib.html">
+                     <i class="material-icons">person</i>
+                     <p>Slides Gallery</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./quiz.html">
+                     <i class="material-icons">Quiz</i>
+                     <p>quiz</p>
+                  </a>
+               </li>
+               
+             
+
+               <li class="nav-item text-center">
+                  <a class="nav-link" href="./index.html">
+                     <button type="submit" class="btn btn-danger btn-round btn-just-icon btn-lg text-center">
+                        <i class="material-icons">control_point</i>
+                        <div class="ripple-container"></div>
+                     </button>
+                     <h5>Upload slide</h5>
+                  </a>
+               </li>
+
+            </ul>
+         </div>
+      </div>
+      <div class="main-panel">
+         <!-- Navbar -->
+         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+               <div class="navbar-wrapper">
+               </div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                  aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+               </button>
+              
+               <div class="collapse navbar-collapse justify-content-end">
+
+   
+               </div>
+            </div>
+         </nav>
+         <!-- End Navbar -->
+         <div class="content" style="margin-top: 0px;">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                     <button type="button" class="btn btn-primary btn-lg btn-block">
+                        <h2>Slide Uploader</h2>
+                     </button>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="wrapper wrapper-content animated fadeInRight">
+                        <div class="ibox-content forum-container">
+
+
+                           <!-- forum body -->
+                           <div class="col-md-12">
+                              <h2>i learn </h2>
+
+                              
+                              
+                          
+                              <button class="btn btn-primary">
+                              <input id=" " type="file" accept="image/*" onchange="openFile(event,this.id)"></button>
+                              
+                              <button id="b1" onclick="uploadfile(this.id)" class="btn btn-primary pull-right">load image</button>
+
+                              <button class="btn btn-primary" onclick="start()">Crop</button>
+                              <div>
+                                  <button class="btn btn-primary" onclick=crop()>Submit Data</button>
+                              </div>
+                              
+                              <div>
+                                 <img id="image1" >
+                             </div>
+                             <!-- <h3>Interative slides</h3>
+                             <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
+                           </div>
+
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/core/popper.min.js"></script>
+      <script src="assets/js/core/bootstrap-material-design.min.js"></script>
+      <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+
+      <script src="assets/js/plugins/jquery.validate.min.js"></script>
+
+      <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+</body>
+<script>
+   var base64;
+
+function openFile(event,id) {
+   
+   
+   //var file    = document.querySelector('input[type=file]').files[0];
+   var input = event.target;
+   let reader = new FileReader();
+   reader.onload = function(){
+     var dataURL = reader.result;
+     var output = document.getElementById('image1');
+     output.src = dataURL;
+     };
+   reader.readAsDataURL(input.files[0]);
+   
+ }
+
+
+
+ function uploadfile(){
+    
+   $.post('http://10.194.219.243:5000/',{data : base64}, function(response){
+      console.log(response);
+   })
+
+ }
+
+
+ var cropper;
+
+  function start(){
+var image = document.getElementById('image1');
+cropper = new Cropper(image, {
+  zoomable: false,
+        scalable: false,
+  crop: function(e) {
+    console.log(e.detail.x);
+    console.log(e.detail.y);
+    console.log(e.detail.width);
+    console.log(e.detail.height);
+    console.log(e.detail.rotate);
+    console.log(e.detail.scaleX);
+    console.log(e.detail.scaleY);
+  }
+});
+  }
+function crop() {
+  
+    
+    //console.log(cropper.getCroppedCanvas().toDataURL());
+
+    var imagedata = cropper.getCroppedCanvas().toDataURL();
+    
+   $.post('/dummyapi',{data : imagedata},(data)=>{
+      console.log(data);
+  })
+
+}
+
+
+</script>
+
+</html>
