@@ -3,7 +3,7 @@ const path = require('path');
 
 
 const app = express()
-const port = 7700;
+const port = process.env.PORT || 7700;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
