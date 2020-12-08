@@ -116,13 +116,19 @@
                               
                           
                               <button class="btn btn-primary">
-                              <input id=" " type="file" accept="image/*" onchange="openFile(event,this.id)"></button>
+                                 <input type="file" id="fileUpload" />
+                             </button>
+                             <p>*Kindly upload slides with no space in name</p>
                               
-                          
+                           
 
-                                  <button class="btn btn-primary" onclick=crop()>Submit slide</button>
-                              </div>
                               
+                              </div>
+                              <br>
+
+                              <br>
+                              <h3 id="loading"></h3>
+                              <h3 id="link"></h3>
                              
                              <!-- <h3>Interative slides</h3>
                              <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
@@ -146,65 +152,71 @@
       <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 </body>
 <script>
-   var base64;
 
-function openFile(event,id) {
+let req_add = "http://54.162.127.68:5000/"
+// let file_name = "Clustering"
+
+ const handleImageUpload = event => {
    
-   
-   //var file    = document.querySelector('input[type=file]').files[0];
-   var input = event.target;
-   let reader = new FileReader();
-   reader.onload = function(){
-     var dataURL = reader.result;
-     var output = document.getElementById('image1');
-     output.src = dataURL;
-     };
-   reader.readAsDataURL(input.files[0]);
-   
- }
+    $("#loading").text("loading.....");
+   //  hyper_link = `${req_add}/${file_name}`
+   //  $('#link').append(`click to open <a href="${hyper_link}"  target="_blank">${file_name}</a>`)
+  const files = event.target.files
+  const formData = new FormData()
+  formData.append('ppt', files[0])
 
 
 
- function uploadfile(){
-    
-   $.post('http://10.194.219.243:5000/',{data : base64}, function(response){
-      console.log(response);
-   })
 
- }
+var settings = {
+  "url": `${req_add}/upload-pptx`,
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": formData
+};
 
+let file_name = '';
 
- var cropper;
-
-  function start(){
-var image = document.getElementById('image1');
-cropper = new Cropper(image, {
-  zoomable: false,
-        scalable: false,
-  crop: function(e) {
-    console.log(e.detail.x);
-    console.log(e.detail.y);
-    console.log(e.detail.width);
-    console.log(e.detail.height);
-    console.log(e.detail.rotate);
-    console.log(e.detail.scaleX);
-    console.log(e.detail.scaleY);
-  }
-});
-  }
-function crop() {
+$.ajax(settings).done(function (response) {
+  console.log(response,typeof response);
   
-    
-    //console.log(cropper.getCroppedCanvas().toDataURL());
+  let data = response
+  let res = JSON.parse(data);
 
-    var imagedata = cropper.getCroppedCanvas().toDataURL();
-    
-   $.post('/dummyapi',{data : imagedata},(data)=>{
-      console.log(data);
-  })
+  console.log(res,typeof res, res.status);
+  console.log(res['data'].name, response['status'])
+  //console.log(res.data.name);
+  file_name = res['data'].name;
+  console.log("-",response.data);
+  $("#loading").text("process- complete");
+  $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
+}).fail(function (err){
+   $("#loading").text("Error while processing");
+   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`)
+});
 
+//   var requestOptions = {
+//   method: 'POST',
+//   body: formData,
+//   redirect: 'follow'
+// };
+
+//   fetch("localhost:5000/upload-pptx", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
+
+
+  
 }
 
+document.querySelector('#fileUpload').addEventListener('change', event => {
+   console.log("i am here");
+  handleImageUpload(event)
+})
 
 </script>
 
