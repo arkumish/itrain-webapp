@@ -20,6 +20,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
 
+   <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
 <style>
  img {
   max-width: 100%; /* This rule is very important, please do not ignore this! */
@@ -230,14 +233,15 @@ document.querySelector('#fileUpload').addEventListener('change', event => {
 })
 
 
-function submitAll() {
-   let passkey = $("#pass-key").val();
-   let classtype = $("#exampleSelect1").val();
-   let stringlink = $('#link').html();
+// function submitAll() {
+//    let passkey = $("#pass-key").val();
+//    let classtype = $("#exampleSelect1").val();
+//    let stringlink = $('#link').html();
 
-   console.log(passkey,classtype,stringlink)
-}
+//    console.log(passkey,classtype,stringlink)
+// }
 
 </script>
+<script defer src="./init-config.js"></script>
 
 </html>
