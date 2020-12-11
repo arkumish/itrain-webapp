@@ -48,6 +48,12 @@
                      <p>Home</p>
                   </a>
                </li>
+               <li class="nav-item   ">
+                  <a class="nav-link" href="./login.html">
+                     <i class="material-icons">login</i>
+                     <p>Trainee login</p>
+                  </a>
+               </li>
               
                <li class="nav-item ">
                   <a class="nav-link" href="./slide-lib.html">
@@ -120,10 +126,10 @@
                            <!-- forum body -->
                            <div class="col-md-12">
                               
-                              
+                              <br><br><br>
 
                                  <div class="form-group">
-                                    <label for="exampleInputEmail1" class="bmd-label-floating">Enter Class Pass-Key</label>
+                                    <h3 for="exampleInputEmail1" class="bmd-label-floating">Enter Class Pass-Key</h3>
                                     <input type="text" class="form-control" id="pass-key">
                                     <span class="bmd-help">This pass-key will be used to login by trainnee.</span>
                                   </div>
@@ -132,10 +138,11 @@
                                   <div class="form-group">
                                     <label for="exampleSelect1" class="bmd-label-floating">Select trainig type</label>
                                     <select class="form-control" id="exampleSelect1">
-                                      <option>Class</option>
+                                       <option>Fresh grade training</option>
                                       <option>Onboarding</option>
-                                      <option>Fresh grad training</option>
-                                      <option>Infra trainig</option>
+                                      <option>IT training</option>
+                                      <option>Infra training</option>
+                                     
                                     
                                     </select>
                                   </div>
@@ -219,8 +226,8 @@ $.ajax(settings).done(function (response) {
   $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
   $('#submit-form').show();
 }).fail(function (err){
-   $("#loading").text("Error while processing");
-   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
+   $("#loading").text("");
+   $('#link').append(`Error while processing. Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
    $('#submit-form').show();
 });
 

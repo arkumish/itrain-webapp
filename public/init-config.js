@@ -31,28 +31,30 @@ function submitAll() {
              link:stringlink
             }).then(function(){
               console.log("saved");
+              alert("saved")
             }).catch(function(error){
               console.log("error",error);
             })
 }
         
-function submitAll() {
+function submitloginAll() {
   let passkey = $("#pass-key").val();
   let classtype = $("#exampleSelect1").val();
-  $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
-
-  console.log(passkey,classtype);
-
-  $('#statusCheck').show();
+ 
 
   var docRef = db.collection("itrain").doc(classtype);
 
     docRef.get().then(function(doc) {
         if (doc.exists) {
             console.log("Document data:", doc.data());
+            $('#link').append(doc.data().link);
+            $('#statusCheck').show();
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
+            $('#link').html('');
+            $('#link').append('No slides uploaded for this Training type.<br> Contact your instructor ');
+            $('#statusCheck').show();
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
