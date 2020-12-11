@@ -20,6 +20,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
 
+   <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
 <style>
  img {
   max-width: 100%; /* This rule is very important, please do not ignore this! */
@@ -198,19 +201,17 @@ $( document ).ready(function() {
 });
 
 
+// function submitAll() {
+//    let passkey = $("#pass-key").val();
+//    let classtype = $("#exampleSelect1").val();
+//    $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
 
+//    console.log(passkey,classtype);
 
-
-function submitAll() {
-   let passkey = $("#pass-key").val();
-   let classtype = $("#exampleSelect1").val();
-   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
-
-   console.log(passkey,classtype);
-
-   $('#statusCheck').show();
-}
+//    $('#statusCheck').show();
+// }
 
 </script>
+<script defer src="./init-config.js"></script>
 
 </html>

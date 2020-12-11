@@ -36,3 +36,25 @@ function submitAll() {
             })
 }
         
+function submitAll() {
+  let passkey = $("#pass-key").val();
+  let classtype = $("#exampleSelect1").val();
+  $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
+
+  console.log(passkey,classtype);
+
+  $('#statusCheck').show();
+
+  var docRef = db.collection("itrain").doc(classtype);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
