@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <title>iTrain</title>
+   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+      name='viewport' />
+      <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
+   <script src="assets/js/core/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+   
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
+
+<style>
+ img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+  height: auto;
+}
+</style>
+
+</head>
+
+<body class="">
+   <div class="wrapper ">
+      <div class="sidebar" data-color="purple" data-background-color="white">
+         <div class="logo text-center">
+            <a href="#">
+               <h3>iTrain Dashboard</h3>
+            </a>
+         </div>
+         <div class="sidebar-wrapper">
+            <ul class="nav">
+               <li class="nav-item active  ">
+                  <a class="nav-link" href="./index.html">
+                     <i class="material-icons">content_paste</i>
+                     <p>Home</p>
+                  </a>
+               </li>
+              
+               <li class="nav-item ">
+                  <a class="nav-link" href="./slide-lib.html">
+                     <i class="material-icons">person</i>
+                     <p>Slides Gallery</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./quiz.html">
+                     <i class="material-icons">Quiz</i>
+                     <p>quiz</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./index1.html">
+                     <i class="material-icons">Leaderboard</i>
+                     <p>Leaderboard</p>
+                  </a>
+               </li>
+             
+
+               <li class="nav-item text-center">
+                  <a class="nav-link" href="./index.html">
+                     <button type="submit" class="btn btn-danger btn-round btn-just-icon btn-lg text-center">
+                        <i class="material-icons">control_point</i>
+                        <div class="ripple-container"></div>
+                     </button>
+                     <h5>Upload slide</h5>
+                  </a>
+               </li>
+
+            </ul>
+         </div>
+      </div>
+      <div class="main-panel">
+         <!-- Navbar -->
+         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+               <div class="navbar-wrapper">
+               </div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                  aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+               </button>
+              
+               <div class="collapse navbar-collapse justify-content-end">
+
+   
+               </div>
+            </div>
+         </nav>
+         <!-- End Navbar -->
+         <div class="content" style="margin-top: 0px;">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                     <button type="button" class="btn btn-primary btn-lg btn-block">
+                        <h2>Trainee Login</h2>
+                     </button>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="wrapper wrapper-content animated fadeInRight">
+                        <div class="ibox-content forum-container">
+
+
+                           <!-- forum body -->
+                           <div class="col-md-12">
+                              
+                              
+
+                                 <div class="form-group">
+                                    <h3 for="exampleInputEmail1" class="bmd-label-floating">Enter Class Pass-Key</h3>
+                                    <input type="text" class="form-control" id="pass-key">
+                                    <span class="bmd-help">login by pass-key provided by instructor</span>
+                                  </div>
+
+
+                                  <div class="form-group">
+                                    <label for="exampleSelect1" class="bmd-label-floating">Select trainig type</label>
+                                    <select class="form-control" id="exampleSelect1">
+                                      <option>Class</option>
+                                      <option>Onboarding</option>
+                                      <option>Fresh grad training</option>
+                                      <option>Infra trainig</option>
+                                    
+                                    </select>
+                                  </div>
+                                  
+                                
+                               
+                                   
+                                    <button type="submit" onclick="submitAll()" id="submit-form" class="btn btn-primary btn-raised">Submit</button>
+                             
+                            <div id="statusCheck">
+                                    <h2>Trainee slides Links</h2>
+                                    <hr>
+                                    <h5 id="link"></h5>
+
+                                    <br><br>
+
+                                    <h2> Default reference Links</h2>
+                                    <hr>
+                                    <ul>
+                                        <li>
+                                            <a href="http://54.165.221.35:5000/Clustering" target="_blank">Clustering</a>
+                                        </li>
+                                        <li>
+                                          <a href="http://54.165.221.35:5000/EY-GFT-Financial-Reporting-Training" target="_blank">EY-GFT-Financial-Reporting-Training</a>
+                                      </li>
+                                      <li>
+                                          <a href="http://54.165.221.35:5000/Hypothesis-Testing" target="_blank">EHypothesis-Testing</a>
+                                      </li>
+                                      <li>
+                                          <a href="http://54.165.221.35:5000/EY_Overview-BOB-Master_27.04.2020-wo-Audio" target="_blank">EY_Overview-BOB-Master_27.04.2020-wo-Audio</a>
+                                      </li>
+                                    </ul>
+
+                                </div>     
+                              </div>
+                              
+                             
+                             
+                             <!-- <h3>Interative slides</h3>
+                             <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
+                           </div>
+
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="assets/js/core/popper.min.js"></script>
+      <script src="assets/js/core/bootstrap-material-design.min.js"></script>
+      <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+
+      <script src="assets/js/plugins/jquery.validate.min.js"></script>
+
+      <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+</body>
+<script>
+$( document ).ready(function() {
+   $('#statusCheck').hide();
+});
+
+
+
+
+
+function submitAll() {
+   let passkey = $("#pass-key").val();
+   let classtype = $("#exampleSelect1").val();
+   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
+
+   console.log(passkey,classtype);
+
+   $('#statusCheck').show();
+}
+
+</script>
+
+</html>
