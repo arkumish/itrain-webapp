@@ -116,25 +116,41 @@
 
                            <!-- forum body -->
                            <div class="col-md-12">
-                              <h2>i train </h2>
+                              
+                              
 
-                              
-                              
-                          
-                              <button class="btn btn-primary">
-                                 <input type="file" id="fileUpload" />
-                             </button>
-                             <p>*Kindly upload slides with no space in name</p>
-                              
-                           
+                                 <div class="form-group">
+                                    <label for="exampleInputEmail1" class="bmd-label-floating">Enter Class Pass-Key</label>
+                                    <input type="text" class="form-control" id="pass-key">
+                                    <span class="bmd-help">This pass-key will be used to login by trainnee.</span>
+                                  </div>
+
+
+                                  <div class="form-group">
+                                    <label for="exampleSelect1" class="bmd-label-floating">Select trainig type</label>
+                                    <select class="form-control" id="exampleSelect1">
+                                      <option>Class</option>
+                                      <option>Onboarding</option>
+                                      <option>Fresh grad training</option>
+                                      <option>Infra trainig</option>
+                                    
+                                    </select>
+                                  </div>
+                                  
+                                
+                                   
+                                    <input type="file" id="fileUpload" />
+                            
+                                    <p>*Kindly upload slides with no space in name</p> 
+                                    <h5 id="loading"></h5>
+                                    <h5 id="link"></h5>
+                                    <button type="submit" onclick="submitAll()" id="submit-form" class="btn btn-primary btn-raised">Submit</button>
+                             
 
                               
                               </div>
-                              <br>
-
-                              <br>
-                              <h3 id="loading"></h3>
-                              <h3 id="link"></h3>
+                              
+                             
                              
                              <!-- <h3>Interative slides</h3>
                              <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
@@ -158,6 +174,9 @@
       <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 </body>
 <script>
+$( document ).ready(function() {
+   $('#submit-form').hide();
+});
 
 let req_add = "http://54.165.221.35:5000"
 // let file_name = "Clustering"
@@ -165,14 +184,10 @@ let req_add = "http://54.165.221.35:5000"
  const handleImageUpload = event => {
    
     $("#loading").text("loading.....");
-   //  hyper_link = `${req_add}/${file_name}`
-   //  $('#link').append(`click to open <a href="${hyper_link}"  target="_blank">${file_name}</a>`)
+   
   const files = event.target.files
   const formData = new FormData()
   formData.append('ppt', files[0])
-
-
-
 
 var settings = {
   "url": `${req_add}/upload-pptx`,
@@ -199,22 +214,12 @@ $.ajax(settings).done(function (response) {
   console.log("-",response.data);
   $("#loading").text("process- complete");
   $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
+  $('#submit-form').show();
 }).fail(function (err){
    $("#loading").text("Error while processing");
-   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`)
+   $('#link').append(`Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
+   $('#submit-form').show();
 });
-
-//   var requestOptions = {
-//   method: 'POST',
-//   body: formData,
-//   redirect: 'follow'
-// };
-
-//   fetch("localhost:5000/upload-pptx", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-
 
   
 }
@@ -223,6 +228,15 @@ document.querySelector('#fileUpload').addEventListener('change', event => {
    console.log("i am here");
   handleImageUpload(event)
 })
+
+
+function submitAll() {
+   let passkey = $("#pass-key").val();
+   let classtype = $("#exampleSelect1").val();
+   let stringlink = $('#link').html();
+
+   console.log(passkey,classtype,stringlink)
+}
 
 </script>
 
