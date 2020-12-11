@@ -26,7 +26,7 @@
   height: auto;
 }
 
-ul li{
+.list-link li{
 font-size: 20px;
 margin: 20px;
 }
@@ -38,32 +38,45 @@ margin: 20px;
    <div class="wrapper ">
       <div class="sidebar" data-color="purple" data-background-color="white">
          <div class="logo text-center">
+
             <a href="#">
+               <img style="height: 100px; width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png"></img>
                <h3>iTrain Dashboard</h3>
             </a>
          </div>
          <div class="sidebar-wrapper">
             <ul class="nav">
-               <li class="nav-item active  ">
+               <li class="nav-item   ">
                   <a class="nav-link" href="./index.html">
                      <i class="material-icons">content_paste</i>
                      <p>Home</p>
                   </a>
                </li>
+               <li class="nav-item   ">
+                  <a class="nav-link" href="./login.html">
+                     <i class="material-icons">login</i>
+                     <p>Trainee login</p>
+                  </a>
+               </li>
               
-               <li class="nav-item ">
+               <li class="nav-item active ">
                   <a class="nav-link" href="./slide-lib.html">
                      <i class="material-icons">person</i>
                      <p>Slides Gallery</p>
                   </a>
                </li>
                <li class="nav-item ">
-                <a class="nav-link" href="./quiz.html">
-                   <i class="material-icons">quiz</i>
-                   <p>quiz</p>
-                </a>
-             </li>
-               
+                  <a class="nav-link" href="./quiz.html">
+                     <i class="material-icons">Quiz</i>
+                     <p>quiz</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./index1.html">
+                     <i class="material-icons">Leaderboard</i>
+                     <p>Leaderboard</p>
+                  </a>
+               </li>
              
 
                <li class="nav-item text-center">
@@ -119,7 +132,7 @@ margin: 20px;
                               <h2>Slides List </h2>
 
                               
-                              <ul>
+                              <ul class="list-link">
                                   <li>
                                       <a href="http://54.165.221.35:5000/Clustering" target="_blank">Clustering</a>
                                   </li>
