@@ -57,9 +57,9 @@
                 </a>
              </li>
                <li class="nav-item ">
-                  <a class="nav-link" href="./islides-scrom.html">
+                  <a class="nav-link" href="./islides-scorm.html">
                      <i class="material-icons">laptop</i>
-                     <p>Scrom Slides</p>
+                     <p>scorm Slides</p>
                   </a>
                </li>
               
@@ -156,6 +156,10 @@
                                     <p>*Kindly upload slides with no space in name</p> 
                                     <h5 id="loading"></h5>
                                     <h5 id="link"></h5>
+
+                                    <button id="generate" onclick="generate()">Generate scorm package</button> 
+                                    <p id="g-status">generating...</p>
+                                    <br><br>  <button id="download" onclick="download()">Download scorm</button><br><br>
                                     <button type="submit" onclick="submitAll()" id="submit-form" class="btn btn-primary btn-raised">Submit</button>
                              
 
@@ -188,6 +192,9 @@
 <script>
 $( document ).ready(function() {
    $('#submit-form').hide();
+   $('#generate').hide();
+   $('#download').hide();
+   $('#g-status').hide();
 });
 
 let req_add = "https://eywecode.pythonlabs.co"
@@ -226,6 +233,7 @@ $.ajax(settings).done(function (response) {
   console.log("-",response.data);
   $("#loading").text("process- complete");
   $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
+  $('#generate').show();
   $('#submit-form').show();
 }).fail(function (err){
    $("#loading").text("");
@@ -241,7 +249,29 @@ document.querySelector('#fileUpload').addEventListener('change', event => {
   handleImageUpload(event)
 })
 
+function generate() {
+    let api =''
+    if(file_name)
+    api = `https://eywecode.pythonlabs.co/scorm/${file_name}`
+    else
+    api = `https://eywecode.pythonlabs.co/scorm/Clustering`;
+    $('#g-status').show();
+    $.get(api,function(res){
+        $('#download').show();
+        $('#g-status').hide();
+    })
+    
+}
 
+function download() {
+    let api ='https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip'
+    
+    $.get(api,function(res){
+       
+       
+    })
+    
+}
 // function submitAll() {
 //    let passkey = $("#pass-key").val();
 //    let classtype = $("#exampleSelect1").val();
