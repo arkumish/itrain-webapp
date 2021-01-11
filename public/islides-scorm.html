@@ -7,94 +7,97 @@
    <title>iTrain</title>
    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
       name='viewport' />
-      <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
+   <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
    <script src="assets/js/core/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
    <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-   
+
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
 
-<style>
- img {
-  max-width: 100%; /* This rule is very important, please do not ignore this! */
-  height: auto;
-}
+   <style>
+      img {
+         max-width: 100%;
+         /* This rule is very important, please do not ignore this! */
+         height: auto;
+      }
 
-.list-link li{
-font-size: 20px;
-margin: 20px;
-}
-.l-link{
-font-size: 150%;
-}
-</style>
+      .list-link li {
+         font-size: 20px;
+         margin: 20px;
+      }
+
+      .l-link {
+         font-size: 150%;
+      }
+   </style>
 
 </head>
 
 <body class="">
    <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white">
-        <div class="logo text-center">
+      <div class="sidebar" data-color="purple" data-background-color="white">
+         <div class="logo text-center">
 
-           <a href="./index.html">
-              <img style="height: 100px; width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png"></img>
-              <h3>iTrain Instructor Dashboard</h3>
-           </a>
-        </div>
-        <div class="sidebar-wrapper">
-           <ul class="nav">
-              <li class="nav-item ">
-                 <a class="nav-link" href="./ihome.html">
-                    <i class="material-icons">content_paste</i>
-                    <p>Home</p>
-                 </a>
-              </li>
-              <li class="nav-item">
-               <a class="nav-link" href="./iquiz-generator.html">
-                  <i class="material-icons">quiz</i>
-                  <p>Quiz Generator</p>
-               </a>
-            </li>
-              <li class="nav-item active ">
-                 <a class="nav-link" href="./islides-scorm.html">
-                    <i class="material-icons">laptop</i>
-                    <p>scorm Slides</p>
-                 </a>
-              </li>
-             
-              <li class="nav-item ">
-                 <a class="nav-link" href="./ileaderboard.html">
-                    <i class="material-icons">list</i>
-                    <p>Leaderboard</p>
-                 </a>
-              </li>
-              <li class="nav-item ">
-               <a class="nav-link" href="./index.html">
-                  <i class="material-icons">logout</i>
-                  <p>logout</p>
-               </a>
-            </li>
-            
+            <a href="./index.html">
+               <img style="height: 100px; width: 100px;"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png"></img>
+               <h3>iTrain Instructor Dashboard</h3>
+            </a>
+         </div>
+         <div class="sidebar-wrapper">
+            <ul class="nav">
+               <li class="nav-item ">
+                  <a class="nav-link" href="./ihome.html">
+                     <i class="material-icons">content_paste</i>
+                     <p>Home</p>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="./iquiz-generator.html">
+                     <i class="material-icons">quiz</i>
+                     <p>Quiz Generator</p>
+                  </a>
+               </li>
+               <li class="nav-item active ">
+                  <a class="nav-link" href="./islides-scorm.html">
+                     <i class="material-icons">laptop</i>
+                     <p>scorm Slides</p>
+                  </a>
+               </li>
 
-              <li class="nav-item text-center">
-                 <a class="nav-link" href="./index.html">
-                    <button type="submit" class="btn btn-danger btn-round btn-just-icon btn-lg text-center">
-                       <i class="material-icons">control_point</i>
-                       <div class="ripple-container"></div>
-                    </button>
-                    <h5>Upload slide</h5>
-                 </a>
-              </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./ileaderboard.html">
+                     <i class="material-icons">list</i>
+                     <p>Leaderboard</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="./index.html">
+                     <i class="material-icons">logout</i>
+                     <p>logout</p>
+                  </a>
+               </li>
 
-           </ul>
-        </div>
-     </div>
+
+               <li class="nav-item text-center">
+                  <a class="nav-link" href="./index.html">
+                     <button type="submit" class="btn btn-danger btn-round btn-just-icon btn-lg text-center">
+                        <i class="material-icons">control_point</i>
+                        <div class="ripple-container"></div>
+                     </button>
+                     <h5>Upload slide</h5>
+                  </a>
+               </li>
+
+            </ul>
+         </div>
+      </div>
       <div class="main-panel">
          <!-- Navbar -->
          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -107,10 +110,10 @@ font-size: 150%;
                   <span class="navbar-toggler-icon icon-bar"></span>
                   <span class="navbar-toggler-icon icon-bar"></span>
                </button>
-              
+
                <div class="collapse navbar-collapse justify-content-end">
 
-   
+
                </div>
             </div>
          </nav>
@@ -135,41 +138,61 @@ font-size: 150%;
                               <!-- <h2>Slides List </h2> -->
 
                               <table class="table l-link">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Module</th>
-                                    <th scope="col">link</th>
-                                    <th scope="col">Download scorm packages</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Clustering</td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/Clustering" target="_blank">open</a></td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip" target="_blank">download</a></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>EY-GFT-Financial-Reporting-Training</td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/EY-GFT-Financial-Reporting-Training" target="_blank">open</a></td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip" target="_blank">download</a></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td>EHypothesis-Testing</td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/Hypothesis-Testing" target="_blank">open</a></td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip" target="_blank">download</a></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">4</th>
-                                    <td>EY_Overview-BOB-Master_27.04.2020-wo-Audio</td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/EY_Overview-BOB-Master_27.04.2020-wo-Audio" target="_blank">open</a></td>
-                                    <td> <a href="https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip" target="_blank">download</a></td>
-                                  </tr>
-                                 
-                                </tbody>
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">#</th>
+                                       <th scope="col">Module</th>
+                                       <th scope="col">link</th>
+                                       <th scope="col">Generate scorm packages</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <th scope="row">1</th>
+                                       <td>Clustering</td>
+                                       <td> <a href="https://eywecode.pythonlabs.co/Clustering" target="_blank">open</a>
+                                       </td>
+                                       <td><button onclick="generate('Clustering','1')">Generate scrom</button>
+                                          <div id="status-1"></div>
+                                          <!-- <a href="https://eywecode.pythonlabs.co/scorm_packages/TrainingMaterial_v1.0.0_2021-01-11.zip"
+                                             target="_blank">download</a> -->
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th scope="row">2</th>
+                                       <td>EY-GFT-Financial-Reporting-Training</td>
+                                       <td> <a href="https://eywecode.pythonlabs.co/EY-GFT-Financial-Reporting-Training"
+                                             target="_blank">open</a></td>
+                                       <td>
+                                          <button onclick="generate('EY-GFT-Financial-Reporting-Training','2')">Generate
+                                             scrom</button>
+                                          <div id="status-2"></div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th scope="row">3</th>
+                                       <td>Hypothesis-Testing</td>
+                                       <td> <a href="https://eywecode.pythonlabs.co/Hypothesis-Testing"
+                                             target="_blank">open</a></td>
+                                       <td> <button onclick="generate('Hypothesis-Testing','3')">Generate
+                                             scrom</button>
+                                          <div id="status-3"></div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th scope="row">4</th>
+                                       <td>EY_Overview-BOB-Master_27.04.2020-wo-Audio</td>
+                                       <td> <a
+                                             href="https://eywecode.pythonlabs.co/EY_Overview-BOB-Master_27.04.2020-wo-Audio"
+                                             target="_blank">open</a></td>
+                                       <td> <button
+                                             onclick="generate('EY_Overview-BOB-Master_27.04.2020-wo-Audio','4')">Generate
+                                             scrom</button>
+                                          <div id="status-4"></div>
+                                       </td>
+                                    </tr>
+
+                                 </tbody>
                               </table>
                               <!-- <ul class="list-link">
                                 
@@ -178,12 +201,13 @@ font-size: 150%;
                               </ul> -->
                               <div class="ibox-content forum-container">
 
-                                <iframe width="80%" height="450px" frameBorder="0" scrolling="yes" src="https://eywecode.pythonlabs.co/Clustering/#/0"></iframe>
-    
-    
-                            </div>
-                            <div id="commento"></div>
-                             <!-- <h3>Interative slides</h3>
+                                 <iframe width="80%" height="450px" frameBorder="0" scrolling="yes"
+                                    src="https://eywecode.pythonlabs.co/Clustering/#/0"></iframe>
+
+
+                              </div>
+                              <div id="commento"></div>
+                              <!-- <h3>Interative slides</h3>
                              <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
                            </div>
 
@@ -204,7 +228,32 @@ font-size: 150%;
 
       <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
       <script defer src="https://cdn.commento.io/js/commento.js"></script>
-      
+      <script>
+         function generate(fileName, order) {
+            let api = `https://eywecode.pythonlabs.co/scorm/${fileName}`
+            $(`#status-${order}`).html('<p>generating...</p>')
+
+            $.ajax({
+               url: api,
+               success: function (res) {
+                  console.log(res)
+                  $(`#status-${order}`).html(
+                  ` <a href="https://eywecode.pythonlabs.co/scorm_packages/${res}" target="_blank">Click to download</a>`
+                  )
+               },
+               error: function (err) {
+                  console.log(err)
+                  $(`#status-${order}`).html('<p>error...</p>')
+               }
+            });
+            // $.get(api, function (res) {
+            //    console.log(res)
+            //    $(`#status-${order}`).html(
+            //       ` <a href="https://eywecode.pythonlabs.co/scorm_packages/${res}" target="_blank">Click to download</a>`
+            //       )
+            // })
+         }
+      </script>
 </body>
 
 

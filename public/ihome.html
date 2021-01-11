@@ -233,7 +233,7 @@ $.ajax(settings).done(function (response) {
   console.log("-",response.data);
   $("#loading").text("process- complete");
   $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
-  $('#generate').show();
+  //$('#generate').show();
   $('#submit-form').show();
 }).fail(function (err){
    $("#loading").text("");
