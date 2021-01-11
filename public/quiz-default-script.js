@@ -1,3 +1,4 @@
+//var questions = []
 var questions = [{
     question: "1. which is not a types of CLUSTER ANALYSIS?",
     choices: ["Density Clustering", "Centroid Clustering", "k-means", "Distribution Clustering"],
@@ -10,15 +11,17 @@ var questions = [{
     question: "3. In which algorithms Euclidean Distance is used?",
     choices: ["k-means", "Naive Bayes", "Random Forest", "Decision Tree"],
     correctAnswer: 1
-}, {
-    question: "4. Which of the following is finally produced by Hierarchical Clustering?",
-    choices: ["inal estimate of cluster centroids", "tree showing how close things are to each other", "assignment of each point to clusters", "all of the mentioned"],
-    correctAnswer: 2
-}, {
-    question: "5. Which of the following is required by K-means clustering?",
-    choices: ["defined distance metric", "number of clusters", "initial guess as to cluster centroids", "all of the mentioned"],
-    correctAnswer: 4
-}];
+}
+// , {
+//     question: "4. Which of the following is finally produced by Hierarchical Clustering?",
+//     choices: ["inal estimate of cluster centroids", "tree showing how close things are to each other", "assignment of each point to clusters", "all of the mentioned"],
+//     correctAnswer: 2
+// }, {
+//     question: "5. Which of the following is required by K-means clustering?",
+//     choices: ["defined distance metric", "number of clusters", "initial guess as to cluster centroids", "all of the mentioned"],
+//     correctAnswer: 4
+// }
+];
 
 
 var currentQuestion = 0;
@@ -30,7 +33,9 @@ var iSelectedAnswer = [];
 	var t;
 $(document).ready(function () 
 {
-    // Display the first question
+	// Display the first question
+	//var qq = JSON.parse(localStorage.getItem("new-quiz") || "[]");
+	//questions = [...qq]
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
     $(this).find(".preButton").attr('disabled', 'disabled');
@@ -97,11 +102,17 @@ $(document).ready(function ()
 				else 
 				{
 					displayScore();
+					currentUser = localStorage.getItem("currentUser") || "alex";
+					
+					currentscore  = localStorage.getItem(currentUser) || 0;
+					total_score = parseInt(currentscore) + parseInt(correctAnswers)
+					localStorage.setItem(currentUser,total_score)
 					$('#iTimeShow').html('Quiz Time Completed!');
 					$('#timer').html("You scored: " + correctAnswers + " out of: " + questions.length);
 					c=185;
 					$(document).find(".preButton").text("View Answer");
 					$(document).find(".nextButton").text("Play Again?");
+
 					quizOver = true;
 					return false;
 					

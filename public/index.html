@@ -2,255 +2,148 @@
 <html lang="en">
 
 <head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-   <title>iTrain</title>
-   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-      name='viewport' />
-      <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
-   <script src="assets/js/core/jquery.min.js"></script>
-   <link rel="stylesheet" type="text/css"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-   
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
+  <title>iTrain </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-   <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+  <!-- Favicons -->
+  <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png" rel="icon">
+  <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png" rel="apple-touch-icon">
 
-<style>
- img {
-  max-width: 100%; /* This rule is very important, please do not ignore this! */
-  height: auto;
-}
-</style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="main-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="main-assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="main-assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="main-assets/vendor/owl.carousel/main-assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="main-assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="main-assets/vendor/aos/aos.css" rel="stylesheet">
+
+  
+  <link href="main-assets/css/style.css" rel="stylesheet">
+
+  
 </head>
 
-<body class="">
-   <div class="wrapper ">
-      <div class="sidebar" data-color="purple" data-background-color="white">
-         <div class="logo text-center">
+<body>
 
-            <a href="#">
-               <img style="height: 100px; width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png"></img>
-               <h3>iTrain Dashboard</h3>
-            </a>
-         </div>
-         <div class="sidebar-wrapper">
-            <ul class="nav">
-               <li class="nav-item active  ">
-                  <a class="nav-link" href="./index.html">
-                     <i class="material-icons">content_paste</i>
-                     <p>Home</p>
-                  </a>
-               </li>
-               <li class="nav-item   ">
-                  <a class="nav-link" href="./login.html">
-                     <i class="material-icons">login</i>
-                     <p>Trainee login</p>
-                  </a>
-               </li>
-              
-               <li class="nav-item ">
-                  <a class="nav-link" href="./slide-lib.html">
-                     <i class="material-icons">person</i>
-                     <p>Slides Gallery</p>
-                  </a>
-               </li>
-               <li class="nav-item ">
-                  <a class="nav-link" href="./quiz.html">
-                     <i class="material-icons">Quiz</i>
-                     <p>quiz</p>
-                  </a>
-               </li>
-               <li class="nav-item ">
-                  <a class="nav-link" href="./index1.html">
-                     <i class="material-icons">Leaderboard</i>
-                     <p>Leaderboard</p>
-                  </a>
-               </li>
-             
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center">
 
-               <li class="nav-item text-center">
-                  <a class="nav-link" href="./index.html">
-                     <button type="submit" class="btn btn-danger btn-round btn-just-icon btn-lg text-center">
-                        <i class="material-icons">control_point</i>
-                        <div class="ripple-container"></div>
-                     </button>
-                     <h5>Upload slide</h5>
-                  </a>
-               </li>
-
-            </ul>
-         </div>
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png"> hackathon</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="main-assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-      <div class="main-panel">
-         <!-- Navbar -->
-         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-            <div class="container-fluid">
-               <div class="navbar-wrapper">
-               </div>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
-                  aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span>
-                  <span class="navbar-toggler-icon icon-bar"></span>
-                  <span class="navbar-toggler-icon icon-bar"></span>
-                  <span class="navbar-toggler-icon icon-bar"></span>
-               </button>
-              
-               <div class="collapse navbar-collapse justify-content-end">
 
-   
-               </div>
-            </div>
-         </nav>
-         <!-- End Navbar -->
-         <div class="content" style="margin-top: 0px;">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-lg-12 col-md-12">
-                     <button type="button" class="btn btn-primary btn-lg btn-block">
-                        <h2>Slide Uploader</h2>
-                     </button>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-lg-12">
-                     <div class="wrapper wrapper-content animated fadeInRight">
-                        <div class="ibox-content forum-container">
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+         <li class="get-started"><a href="tauth.html">Trainee Dashboard</a></li>
+         <li class="get-started"><a href="iauth.html">Instructor Dashboard</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
 
+    </div>
+  </header><!-- End Header -->
 
-                           <!-- forum body -->
-                           <div class="col-md-12">
-                              
-                              <br><br><br>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
 
-                                 <div class="form-group">
-                                    <h3 for="exampleInputEmail1" class="bmd-label-floating">Enter Class Pass-Key</h3>
-                                    <input type="text" class="form-control" id="pass-key">
-                                    <span class="bmd-help">This pass-key will be used to login by trainnee.</span>
-                                  </div>
-
-
-                                  <div class="form-group">
-                                    <label for="exampleSelect1" class="bmd-label-floating">Select trainig type</label>
-                                    <select class="form-control" id="exampleSelect1">
-                                       <option>Fresh grade training</option>
-                                      <option>Onboarding</option>
-                                      <option>IT training</option>
-                                      <option>Infra training</option>
-                                     
-                                    
-                                    </select>
-                                  </div>
-                                  
-                                
-                                   
-                                    <input type="file" id="fileUpload" />
-                            
-                                    <p>*Kindly upload slides with no space in name</p> 
-                                    <h5 id="loading"></h5>
-                                    <h5 id="link"></h5>
-                                    <button type="submit" onclick="submitAll()" id="submit-form" class="btn btn-primary btn-raised">Submit</button>
-                             
-
-                              
-                              </div>
-                              
-                             
-                             
-                             <!-- <h3>Interative slides</h3>
-                             <iframe src="https://5a6af038188e.ngrok.io/out.md#/13"  style="height:500px;width:100%;" title="Iframe Example"></iframe> -->
-                           </div>
-
-
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+          <div>
+            <h1>iTrain : A smart automated learning platform</h1>
+            <h2></h2>
+            <a href="index.html" class="download-btn"> Click to explore</a>
+            
+          </div>
+        </div>
+        <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+          <img src="main-assets/img/details-2.png" class="img-fluid" alt="">
+        </div>
       </div>
-      <script src="assets/js/core/popper.min.js"></script>
-      <script src="assets/js/core/bootstrap-material-design.min.js"></script>
-      <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= App Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features of iTrain</h2>
+          <p></p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="bx bx-receipt"></i>
+                  <h4>Generate Interative Learning</h4>
+                  <!-- <p>With smart learning module you can easily convert existing old learning into more interative one</p> -->
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>SCROM support</h4>
+                 
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bx-atom"></i>
+                  <h4>Quiz & Leaderboard</h4>
+                  <!-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> -->
+                </div>
+                <!-- <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bx bx-shield"></i>
+                  <h4>Beatae veritatis</h4>
+                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                </div> -->
+                <!-- <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bx bx-atom"></i>
+                  <h4>Molestiae dolor</h4>
+                  <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
+                </div> -->
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                  <i class="bx bx-id-card"></i>
+                  <h4>Convert ppt to smart web page</h4>
+                  <!-- <p>Easily convert ppts to interative html pages</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="main-assets/img/details-1.png" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End App Features Section -->
 
 
-      <script src="assets/js/plugins/jquery.validate.min.js"></script>
 
-      <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+  <!-- Vendor JS Files -->
+  <script src="main-assets/vendor/jquery/jquery.min.js"></script>
+  <script src="main-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="main-assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="main-assets/vendor/php-email-form/validate.js"></script>
+  <script src="main-assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="main-assets/vendor/venobox/venobox.min.js"></script>
+  <script src="main-assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="main-assets/js/main.js"></script>
+
 </body>
-<script>
-$( document ).ready(function() {
-   $('#submit-form').hide();
-});
-
-let req_add = "http://54.165.221.35:5000"
-// let file_name = "Clustering"
-
- const handleImageUpload = event => {
-   
-    $("#loading").text("loading.....");
-   
-  const files = event.target.files
-  const formData = new FormData()
-  formData.append('ppt', files[0])
-
-var settings = {
-  "url": `${req_add}/upload-pptx`,
-  "method": "POST",
-  "timeout": 0,
-  "processData": false,
-  "mimeType": "multipart/form-data",
-  "contentType": false,
-  "data": formData
-};
-
-let file_name = '';
-
-$.ajax(settings).done(function (response) {
-  console.log(response,typeof response);
-  
-  let data = response
-  let res = JSON.parse(data);
-
-  console.log(res,typeof res, res.status);
-  console.log(res['data'].name, response['status'])
-  //console.log(res.data.name);
-  file_name = res['data'].name;
-  console.log("-",response.data);
-  $("#loading").text("process- complete");
-  $('#link').append(`click to open <a href="${req_add}/${file_name}" target="_blank">${file_name}</a>`)
-  $('#submit-form').show();
-}).fail(function (err){
-   $("#loading").text("");
-   $('#link').append(`Error while processing. Kindly check existing slides, <a href="/slide-lib.html" target="_blank">Slides Library</a>`);
-   $('#submit-form').show();
-});
-
-  
-}
-
-document.querySelector('#fileUpload').addEventListener('change', event => {
-   console.log("i am here");
-  handleImageUpload(event)
-})
-
-
-// function submitAll() {
-//    let passkey = $("#pass-key").val();
-//    let classtype = $("#exampleSelect1").val();
-//    let stringlink = $('#link').html();
-
-//    console.log(passkey,classtype,stringlink)
-// }
-
-</script>
-<script defer src="./init-config.js"></script>
 
 </html>

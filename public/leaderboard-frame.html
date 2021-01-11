@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
+  <title> Leaderboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./leaderboard.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <h1 style="padding-left : 40%;">LEADERBOARD</h1>
+  <div class="center" style="padding-top: 100px;">
+    <!-- <div class="top3">
+    <div class="two item">
+      <div class="pos">
+        2
+      </div>
+      <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/44.jpg&#39;)"></div>
+      <div class="name">
+        Edgar Soto
+      </div>
+      <div class="score">
+        6453
+      </div>
+    </div>
+    <div class="one item">
+      <div class="pos">
+        1
+      </div>
+      <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/31.jpg&#39;)"></div>
+      <div class="name">
+        Clifford James
+      </div>
+      <div class="score">
+        6794
+      </div>
+    </div>
+    <div class="three item">
+      <div class="pos">
+        3
+      </div>
+      <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/women/91.jpg&#39;)"></div>
+      <div class="name">
+        Nevaeh Silva
+      </div>
+      <div class="score">
+        6034
+      </div>
+    </div>
+  </div> -->
+    <div class="list">
+      <!-- <div class="item">
+        <div class="pos">
+          9
+        </div>
+        <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/women/49.jpg&#39;)">
+        </div>
+        <div class="name">
+          Courtney Fuller
+        </div>
+        <div class="score">
+          5713
+        </div>
+      </div> -->
+     
+      </div>
+    </div>
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script>
+    $(document).ready(function () {
+      var leaderboard = [];
+      var list  = [{
+        name : "alex" ,
+        score : localStorage.getItem("alex") || 0,
+        dp : 1,
+      },{
+        name : "sam" ,
+        score : localStorage.getItem("sam") || 0,
+        dp : 2,
+      },
+      {
+        name : "naman" ,
+        score : localStorage.getItem("naman") || 0,
+        dp : 3,
+      },{
+        name : "shivam" ,
+        score : localStorage.getItem("shivam") || 0,
+        dp : 4,
+      },
+      ,{
+        name : "karolx" ,
+        score : localStorage.getItem("karolx") || 0,
+        dp : 5,
+      }]
+
+      leaderboard = [...list]
+      leaderboard.sort((a, b) => (a.score < b.score) ? 1 : -1)
+
+      leaderboard.forEach((element,index) => {
+
+        let html  = `<div class="item">
+        <div class="pos">
+          ${index+1}
+        </div>
+        <div class="pic" style="background-image: url(&#39;https://randomuser.me/api/portraits/men/${element.dp}.jpg&#39;)"></div>
+        <div class="name">
+          ${element.name}
+        </div>
+        <div class="score">
+          ${element.score}
+        </div>
+      </div> `
+
+      $(".list").append(html)
+        
+        })
+      });
+      
+  </script>
+</body>
+
+</html>

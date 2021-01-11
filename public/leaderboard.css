@@ -5,7 +5,7 @@ body, html {
   height: 100%;
   width: 100%;
   overflow-y: scroll;
-  background: #f8f40e;
+  /* background: #f8f40e; */
   color: #333;
   position: absolute;
 }
@@ -64,6 +64,7 @@ body, html {
   font-weight: 900;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color:black;
 }
 .top3 .item .name {
   font-size: 1.1rem;
@@ -106,7 +107,7 @@ body, html {
   height: 3rem;
   border-radius: 4rem;
   margin-bottom: 2rem;
-  background: #EAA786;
+  background: #9c27b080;
   -webkit-transform-origin: left;
           transform-origin: left;
   cursor: pointer;
@@ -123,14 +124,14 @@ body, html {
   text-align: center;
   font-size: 1.25rem;
   width: 1.5rem;
-  color: white;
+  color:black;
   opacity: 0.6;
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
 }
 .list .item .pic {
-  width: 4rem;
-  height: 4rem;
+  width: 90px;
+  height: 70px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
