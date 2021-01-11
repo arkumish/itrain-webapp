@@ -1,15 +1,15 @@
 //var questions = []
 var questions = [{
     question: "1. which is not a types of CLUSTER ANALYSIS?",
-    choices: ["Density Clustering", "Centroid Clustering", "k-means", "Distribution Clustering"],
+    choices: ["Density Clustering", "Centroid Clustering", "k means", "Distribution-Clustering"],
     correctAnswer: 3
 }, {
     question: "2. Which is not a type of unsupervised learning?",
-    choices: ["Clustering", "Association", "Classification", "divide and conquer"],
+    choices: ["Clustering", "-Association", "Classification", "divide and conquer"],
     correctAnswer: 4
 }, {
     question: "3. In which algorithms Euclidean Distance is used?",
-    choices: ["k-means", "Naive Bayes", "Random Forest", "Decision Tree"],
+    choices: ["k means", "Naive-Bayes", "Random Forest", "Decision Tree"],
     correctAnswer: 1
 }
 // , {
